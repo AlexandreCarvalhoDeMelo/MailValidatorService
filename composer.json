@@ -1,0 +1,23 @@
+{
+    "name": "validators/mailvalidator",
+    "description": "Mail validator service",
+    "config": {
+        "optimize-autoloader": true,
+        "sort-packages": true
+    },
+    "autoload": {
+        "psr-4": {
+            "MailValidator\\": "src"
+        }
+    },
+    "require": {
+        "php-di/php-di": "^6.0",
+        "slim/slim": "^4.2",
+        "slim/psr7": "^0.5.0"
+    },
+    "require-dev": {
+        "roave/security-advisories": "dev-master",
+        "phpunit/phpunit": "^7.5"
+
+    }
+}
