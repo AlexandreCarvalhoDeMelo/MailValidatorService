@@ -20,6 +20,6 @@ Then composers and the tests
 ### Validators
 * Regex
 * Domain
-* Smtpm
+* Smtp
 
 If the tests are ok, you're good to go! : )
