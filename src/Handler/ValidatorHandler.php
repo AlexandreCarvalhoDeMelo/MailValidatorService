@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace MailValidator\Handler;
 
-use MailValidator\Validator\Service\Validator as ValidatorMailService;
+use MailValidator\Service\Validator as ValidatorMailService;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Psr\Http\Server\RequestHandlerInterface;
