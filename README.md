@@ -17,4 +17,9 @@ Then composers and the tests
 
 > vendor/bin/phpunit
 
+### Validators
+* Regex
+* Domain
+* Smtpm
+
 If the tests are ok, you're good to go! : )
