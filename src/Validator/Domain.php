@@ -49,4 +49,12 @@ class Domain extends ValidatorAbstract implements ValidatorInterface
 
         return false;
     }
+
+    /**
+     * returns validator name
+     */
+    public function getName(): string
+    {
+        return self::VALIDATOR_NAME;
+    }
 }

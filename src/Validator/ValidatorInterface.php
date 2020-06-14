@@ -19,4 +19,5 @@ interface ValidatorInterface
      */
     public function validate(string $email): bool;
     public function getError(): ?string;
+    public function getName(): string;
 }

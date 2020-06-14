@@ -34,6 +34,14 @@ class Validator
     }
 
     /**
+     * @return array
+     */
+    public function getValidationStack(): array
+    {
+        return $this->validatorStack;
+    }
+
+    /**
      * Returns a validation matrix
      *
      * @param string $email
@@ -55,8 +63,8 @@ class Validator
                     self::FIELD_ERROR_REASON => $error,
                 ];
 
-            $rows[self::FIELD_VALIDATORS][$validator::VALIDATOR_NAME] = [$response];
-        }, $this->validatorStack);
+            $rows[self::FIELD_VALIDATORS][$validator->getName()] = [$response];
+        }, $this->getValidationStack());
 
         $rows[self::FIELD_VALID] = $isValid;
 

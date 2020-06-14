@@ -33,4 +33,12 @@ class Smtp extends ValidatorAbstract implements ValidatorInterface
         $this->setValidatorError(self::VALIDATION_ERROR_MSG);
         return false;
     }
+
+    /**
+     * returns validator name
+     */
+    public function getName(): string
+    {
+        return self::VALIDATOR_NAME;
+    }
 }

@@ -93,5 +93,4 @@ class SmtpTest extends TestCase
         self::assertFalse($subject);
         self::assertEquals($validator->getError(), SmtpValidator::VALIDATION_ERROR_MSG);
     }
-
 }

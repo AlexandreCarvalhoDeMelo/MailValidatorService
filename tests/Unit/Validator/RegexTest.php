@@ -89,5 +89,4 @@ class RegexTest extends TestCase
         self::assertFalse($subject);
         self::assertEquals($validator->getError(), RegexValidator::VALIDATION_ERROR_MSG);
     }
-
 }

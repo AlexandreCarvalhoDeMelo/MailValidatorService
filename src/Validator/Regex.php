@@ -30,4 +30,12 @@ class Regex extends ValidatorAbstract implements ValidatorInterface
         }
         return true;
     }
+
+    /**
+     * returns validator name
+     */
+    public function getName(): string
+    {
+        return self::VALIDATOR_NAME;
+    }
 }
