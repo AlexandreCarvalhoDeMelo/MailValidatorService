@@ -11,7 +11,7 @@ namespace MailValidator\Validator;
 class Regex extends ValidatorAbstract implements ValidatorInterface
 {
     public const VALIDATOR_NAME = 'regex';
-    private const VALIDATION_ERROR_MSG = 'INVALID_EMAIL_FORMAT';
+    public const VALIDATION_ERROR_MSG = 'INVALID_EMAIL_FORMAT';
 
     /**
      * Regex validation pattern

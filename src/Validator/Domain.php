@@ -11,8 +11,8 @@ namespace MailValidator\Validator;
 class Domain extends ValidatorAbstract implements ValidatorInterface
 {
     public const VALIDATOR_NAME = 'domain';
-    private const VALIDATION_ERROR_MSG = "INVALID_TLD";
-    private const VALIDATION_DOMAIN_MSG = "INVALID_DOMAIN";
+    public const VALIDATION_TLD_MSG = "INVALID_TLD";
+    public const VALIDATION_DOMAIN_MSG = "INVALID_DOMAIN";
     private const TLD_LIST_PATH = 'config/tld_list_version_2020061200.txt';
 
     /**
@@ -45,7 +45,7 @@ class Domain extends ValidatorAbstract implements ValidatorInterface
             return true;
         }
 
-        $this->setValidatorError(self::VALIDATION_ERROR_MSG);
+        $this->setValidatorError(self::VALIDATION_TLD_MSG);
 
         return false;
     }
