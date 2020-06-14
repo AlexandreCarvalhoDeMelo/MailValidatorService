@@ -1,4 +1,5 @@
 ## Email Validator Service
+![Validator service](https://i.imgur.com/hvKOco8.gif)
 
 To run:
 > docker run -t -p 8080:8080 -e PORT=8080 alemelo/mailservice
