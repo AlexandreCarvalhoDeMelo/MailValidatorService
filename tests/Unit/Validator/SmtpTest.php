@@ -3,11 +3,11 @@ declare(strict_types=1);
 
 namespace Tests\Unit\Validator;
 
-use MailValidator\Validator\Regex as RegexValidator;
+use MailValidator\Validator\Smtp as SmtpValidator;
 use MailValidator\Validator\ValidatorInterface;
 use PHPUnit\Framework\TestCase;
 
-class RegexTest extends TestCase
+class SmtpTest extends TestCase
 {
 
     /**
@@ -21,15 +21,11 @@ class RegexTest extends TestCase
                 'expected' => true
             ],
             'valid_b' => [
-                'value' => 'system@gmail.nx',
+                'value' => 'system@gmail.com',
                 'expected' => true
             ],
             'valid_c' => [
-                'value' => 'system@huxter.ca',
-                'expected' => true
-            ],
-            'valid_d' => [
-                'value' => 'system@facebook.co.uk',
+                'value' => 'system@facebook.com',
                 'expected' => true
             ],
 
@@ -43,15 +39,15 @@ class RegexTest extends TestCase
     {
         return [
             'invalid_a' => [
-                'value' => 'too@many@google.com.br',
+                'value' => 'too@many@aaaaaaaaaaaaa123sssssxx.com',
                 'expected' => false
             ],
             'invalid_b' => [
-                'value' => '$pec-%$ial@google.com.br',
+                'value' => 'beer@vodkawhiskytequilarumcongnacwine.life',
                 'expected' => false
             ],
             'invalid_c' => [
-                'value' => 't---o"%%%o@@google.com.br',
+                'value' => 'ceo@mycompanyisnotaproblem-asyousee.to.me',
                 'expected' => false
             ],
 
@@ -63,9 +59,9 @@ class RegexTest extends TestCase
      * @param string $email
      * @param bool $expected
      */
-    public function test_regex_validator_works(string $email, bool $expected)
+    public function test_smtp_validator_works(string $email, bool $expected)
     {
-        $validator = new RegexValidator();
+        $validator = new SmtpValidator();
 
         $subject = $validator->validate($email);
 
@@ -73,21 +69,29 @@ class RegexTest extends TestCase
     }
 
     /**
+     *
+     */
+    public function test_checkdns_exists()
+    {
+        self::assertTrue(function_exists('checkdnsrr'));
+    }
+
+    /**
      * @dataProvider invalidEmailProvider
      * @param string $email
      * @param bool $expected
      */
-    public function test_regex_validator_blocks_invalid_format(string $email)
+    public function test_smtp_validator_blocks_non_existant(string $email)
     {
         /**
          * @var ValidatorInterface $subject
          */
-        $validator = new RegexValidator();
+        $validator = new SmtpValidator();
 
         $subject = $validator->validate($email);
 
         self::assertFalse($subject);
-        self::assertEquals($validator->getError(), RegexValidator::VALIDATION_ERROR_MSG);
+        self::assertEquals($validator->getError(), SmtpValidator::VALIDATION_ERROR_MSG);
     }
 
 }

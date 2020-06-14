@@ -11,8 +11,8 @@ namespace MailValidator\Validator;
 class Smtp extends ValidatorAbstract implements ValidatorInterface
 {
     public const VALIDATOR_NAME = 'smtp';
+    public const VALIDATION_ERROR_MSG = "UNABLE_TO_CONNECT";
     private const VALIDATION_ERROR_FUNCTION_NOT_FOUND = "SOMETHING_WENT_WRONG";
-    private const VALIDATION_ERROR_MSG = "UNABLE_TO_CONNECT";
 
     /**
      * @param string $email
