@@ -1,2 +1,9 @@
 FROM php:7-alpine
 WORKDIR /var/www
+COPY . /var/www
+ENV PORT=8080
+RUN chmod -R 755 /var/www/logs
+RUN chmod -R 755 /var/www/var
+EXPOSE $PORT
+CMD php -S 0.0.0.0:$PORT app.php
+

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace MailValidator\Validator\Service;
+namespace MailValidator\Service;
 
 use MailValidator\Validator\ValidatorInterface;
 
