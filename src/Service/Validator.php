@@ -53,18 +53,19 @@ class Validator
         $rows = [];
 
         array_map(function (ValidatorInterface $validator) use ($email, &$isValid, &$rows): void {
+            
             $status = $validator->validate($email);
             $isValid = !$status ? $status : $isValid;
-
             $error = $validator->getError();
+            
             $response = !$error ? [self::FIELD_VALID => $status] :
                 [
                     self::FIELD_VALID => $status,
                     self::FIELD_ERROR_REASON => $error,
                 ];
-
-
+            
             $rows[self::FIELD_VALIDATORS][$validator->getName()] = [$response];
+            
         }, $this->getValidationStack());
 
         $rows[self::FIELD_VALID] = $isValid;
