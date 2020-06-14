@@ -63,6 +63,7 @@ class Validator
                     self::FIELD_ERROR_REASON => $error,
                 ];
 
+
             $rows[self::FIELD_VALIDATORS][$validator->getName()] = [$response];
         }, $this->getValidationStack());
 

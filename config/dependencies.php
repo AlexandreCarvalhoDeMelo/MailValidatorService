@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 use DI\ContainerBuilder;
 use Psr\Container\ContainerInterface;
-use \MailValidator\Validator\Service\Validator as ValidatorService;
+use \MailValidator\Service\Validator as ValidatorService;
 use \MailValidator\Validator\Regex as RegexValidator;
 use \MailValidator\Validator\Domain as DomainValidator;
 use \MailValidator\Validator\Smtp as SmtpValidator;
